@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "EcoCart",
+    "description": "Suggests eco-friendly alternatives to unsustainable cosmetic and food items.",
+    "version": "1.0",
+    "permissions": ["activeTab", "scripting", "storage"],
+    "host_permissions": [
+      "https://www.amazon.in/*",
+      "https://www.flipkart.com/*"
+    ],
+
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "assets/icons.png",
+        "48": "assets/icons.png",
+        "128": "assets/icons.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.amazon.in/*", "https://www.flipkart.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
